@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseUUIDPipe, Post } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service';
 import { CreateUserDto } from './dto/create-user.dto';
 
@@ -10,20 +10,29 @@ export class UsuariosController {
 
   @Get() /* endponit raiz -- home */
   getHome(){
-    return 'home del seccion usuarios'
+    return 'home del seccion usuarios';
   }
 
+  //devuelve todos los productos 
+  // --> select * from productos
   @Get('all') /* endponit raiz */
   getAll(){
     return this.usuariosService.findAll();
   }
+
+  //se le pasa el $id por Get y se devuelve ese producto (objeto)
+  // ---> select * from productos where $id = productos.id
+  @Get(':id')
+  findOne(@Param ('id', new ParseUUIDPipe({version: '4'})) id: number){
+
+    return this.usuariosService.findOne(id);
+
+  }
+
   //Métodos ENDPOINT --> DECORADOR get, post, put, delete...
   @Post('new') /* endponit raiz */
   add(@Body() usuarioDTO: CreateUserDto){
-    
-    console.log('Usuario recibido', usuarioDTO);
-    
-   // return this.usuariosService.new(usuario);
+    return this.usuariosService.new(usuarioDTO);
   }
   //metodo interno para borrar usuarios., NO ES ENDPOINT
   delete(){

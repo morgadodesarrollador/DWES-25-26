@@ -1,23 +1,31 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Ana",
-      "email": "ana@example.com",
-      "edad": 28
-    }
-    
-  ],
-  "products": [
-    {
-      "id": 1,
-      "title": "Camiseta",
-      "price": 20
-    },
-    {
-      "id": 2,
-      "title": "Pantalón",
-      "price": 35
+      "id": "9fb7bd33-5b8f-4ca0-bdf6-923d504ba5ab",
+      "name": "Fulgenci",
+      "email": "fulgen@gmail.com",
+      "edad": 58,
+      "rol": "administrador",
+      "direcciones": [
+        {
+          "calle": "Alameda",
+          "numero": 20,
+          "ciudad": "Almeria",
+          "pais": "España"
+        },
+        {
+          "calle": "Guillermo Reyna",
+          "numero": 30,
+          "ciudad": "Madrid",
+          "pais": "España"
+        },
+        {
+          "calle": "Guillermo Reyna",
+          "numero": 30,
+          "ciudad": "Madrid",
+          "pais": "España"
+        }
+      ]
     }
   ]
 }

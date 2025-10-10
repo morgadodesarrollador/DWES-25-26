@@ -31,11 +31,13 @@ export class CreateUserDto {
     @IsEmail() /* funcion externa que valida que es un string */
     email: string;
 
+    @IsOptional()
     @IsArray() /* funcion externa que valida que es un array */
     @ArrayMinSize(2, {message: 'Debe tener al menos 2 teléfonos'})
     @ArrayMaxSize(3, {message: 'Debe tener  3 teléfonos'})    
     telefonos: string[];
 
+    @IsOptional()
     @IsString()
     @Matches(/^\d{8}[A-Z]$/, {message: 'El nif no es correcto, 8 números y una letra mayúscula'})
     nif: string;
@@ -43,9 +45,11 @@ export class CreateUserDto {
     @IsIn(roles, {message: `El rol debe ser uno de los siguientes: ${roles}`})
     rol: string;
 
+    @IsOptional()
     @IsBoolean()
     esdelMadrid: boolean; //true o false
 
+    @IsOptional()
     @IsArray()
     @ArrayMinSize(3, {message: 'Debe tener al menos 3 direcciones'})
     @ValidateNested({each: true}) //valida cada uno de los elementos del array
