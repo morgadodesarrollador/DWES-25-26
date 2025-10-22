@@ -14,7 +14,7 @@ const roles: string[] = ['administrador', 'usuario', 'invitado'];
 export class CreateUserDto {
 
    // @IsNumber() /* funcion externa que valida que es un número */
-    @IsUUID() //ES UN IDENTIFICADOR UNICO UNIVERSAL 32 o 36 caracteres (-)
+    @IsNumber() //ES UN IDENTIFICADOR UNICO UNIVERSAL 32 o 36 caracteres (-)
     id: number;
     //Edad esta comprendidad entre 18 y 58
     @IsInt({message: 'La edad es un entero'}) /* funcion externa que valida que es un número */

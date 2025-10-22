@@ -26,6 +26,13 @@
           "pais": "España"
         }
       ]
+    },
+    {
+      "id": "9fb7bd33-5b8f-4ca0-bdf6-923d504ba5ab",
+      "name": "AnaBelen",
+      "email": "ana@gmail.com",
+      "edad": 58,
+      "rol": "administrador"
     }
   ]
 }

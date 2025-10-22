@@ -3,9 +3,11 @@ import { UsuariosService } from './usuarios.service';
 import { CreateUserDto } from './dto/create-user.dto';
 
 @Controller('usuarios') /* tabla de mapeo ruta y controlador */
+
 export class UsuariosController {
   //inyectar el servicio UsuariosService en UsuariosController
   //solo se inyectan clases con el decorador @Injectable
+  //inyectar SERVICIO en CONTROLADOR
   constructor(private readonly usuariosService: UsuariosService) {}
 
   @Get() /* endponit raiz -- home */
