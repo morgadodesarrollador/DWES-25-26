@@ -33,10 +33,11 @@ export class UsuariosService {
     // return this.db.data.users;
   }
 
-  async new(usuario: IUser):Promise<IRespUser>{
-    console.log(usuario)
+  async new(usuariDTO: IUser):Promise<IRespUser>{
+    /* transformar el objeto usuario dto en una entidad usuario */
     //insertr el objeto usuario en la base de datos
-    await this.usuarioRepository.save(usuario); 
+    const usuarioEntity = this.usuarioRepository.create(usuariDTO);
+    await this.usuarioRepository.save(usuarioEntity); 
     // await this.db.read();// cargo la base de datos
     // this.db.data.users.push(usuario); //inserta en el array users
     // await this.db.write(); //escribe en el fichero
@@ -44,7 +45,7 @@ export class UsuariosService {
       status: true,
       code: 200,
       msg: 'Usuario creado',
-      data: usuario
+      data: usuarioEntity
     }
   }
 }
