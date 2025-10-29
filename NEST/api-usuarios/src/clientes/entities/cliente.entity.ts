@@ -4,18 +4,12 @@
 import { Address } from "src/common/entitties/address";
 import { BeforeInsert, Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-//create table usuario (id ....)
-//LOGICA DE NEGOCIO DE LA ENTIDAD USUARIO. Hola
 
-
-@Entity('usuario')
-export class Usuario {
+@Entity('cliente')
+export class Cliente {
     
     @PrimaryColumn()
-    nif: string;
-
-    @Column('uuid')
-    id: string;
+    nif: string
 
     @Column({ nullable:true,  length: 30})
     name: string;
@@ -26,23 +20,16 @@ export class Usuario {
     @Column({nullable: false, unique: true})
     email: string;
     
-    @Column()
-    rol: string;
+    @Column('float', {default: 0.3})
+    comision: number;
 
-    @Column(() => Address, { prefix: 'direccion' }) direccion: Address;
+    @Column(() => Address, { prefix: '' }) address: Address;
+    
   
     //**** MECENISMOS DE SEGURIDAD  *****/
     //monitorizar y auditarlos registros de usuarios y 
     //tabla de accesos --> login/logout/change Profile ...  
-    @CreateDateColumn()
-    createdAt: Date;
-
-    @UpdateDateColumn()
-    updatedAt: Date;
-    
-    //deletedAt: Date;
-    //@Before/After-Insert/Update/Remove 
-
+   
 
     @BeforeInsert() //evento disparador
     CheckNif(){ // método manejador del evento

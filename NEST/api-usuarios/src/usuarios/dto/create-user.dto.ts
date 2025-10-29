@@ -6,8 +6,9 @@ import { IsArray, IsNumber, IsInt, IsString, Min, Max, IsEmail, IsEmpty, IsNotEm
     IsUUID,
     ValidateNested} from "class-validator";
 
-import { AdressDTO } from "./adrees.dto";
+
 import { Type } from "class-transformer";
+import { AddressDto } from "src/common/dto/address.dto";
 //peticion a los roles que hay en la tabla de roles de la api
 const roles: string[] = ['administrador', 'usuario', 'invitado'];
 
@@ -51,15 +52,16 @@ export class CreateUserDto {
     @IsBoolean()
     esdelMadrid: boolean; //true o false
 
-    @IsOptional()
-    @IsArray()
-    @ArrayMinSize(3, {message: 'Debe tener al menos 3 direcciones'})
-    @ValidateNested({each: true}) //valida cada uno de los elementos del array
-    @Type(() => AdressDTO) //indica el tipo de los elementos del array
-    direcciones: AdressDTO[]; //array de direcciones
+    // @IsOptional()
+    // @IsArray()
+    // @ArrayMinSize(3, {message: 'Debe tener al menos 3 direcciones'})
+    // @ValidateNested({each: true}) //valida cada uno de los elementos del array
+    // @Type(() => AdressDTO) //indica el tipo de los elementos del array
+    // direcciones: AdressDTO[]; //array de direcciones
    
+    @ValidateNested() //valida cada uno de los elementos del array
+    @Type(() => AddressDto) //indica el tipo de los elementos del array
+    direccion: AddressDto
 }
 
-function IsMinLength(arg0: number, arg1: { message: string; }): (target: CreateUserDto, propertyKey: "name") => void {
-    throw new Error("Function not implemented.");
-}
+
