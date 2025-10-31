@@ -1,0 +1,322 @@
+[
+  {
+    "nif": "12345678A",
+    "nombre": "Carlos",
+    "apellidos": "Pérez Gómez",
+    "edad": 34,
+    "email": "carlos.perez@gmail.com",
+    "comision": 0.25,
+    "address": {
+      "pais": "España",
+      "ciudad": "Madrid",
+      "provincia": "Madrid",
+      "calle": "Gran Vía",
+      "numero": "12",
+      "codigo_postal": "28013"
+    }
+  },
+  {
+    "nif": "23456789B",
+    "nombre": "Lucía",
+    "apellidos": "Martín Ruiz",
+    "edad": 28,
+    "email": "lucia.martin@yahoo.es",
+    "comision": 0.3,
+    "address": {
+      "pais": "España",
+      "ciudad": "Madrid",
+      "provincia": "Madrid",
+      "calle": "Calle Alcalá",
+      "numero": "45",
+      "codigo_postal": "28014"
+    }
+  },
+  {
+    "nif": "34567890C",
+    "nombre": "David",
+    "apellidos": "Sánchez Morales",
+    "edad": 40,
+    "email": "david.sanchez@hotmail.com",
+    "comision": 0.28,
+    "address": {
+      "pais": "España",
+      "ciudad": "Madrid",
+      "provincia": "Madrid",
+      "calle": "Paseo de la Castellana",
+      "numero": "120",
+      "codigo_postal": "28046"
+    }
+  },
+  {
+    "nif": "45678901D",
+    "nombre": "María",
+    "apellidos": "Rodríguez León",
+    "edad": 31,
+    "email": "maria.rodriguez@gmail.com",
+    "comision": 0.27,
+    "address": {
+      "pais": "España",
+      "ciudad": "Madrid",
+      "provincia": "Madrid",
+      "calle": "Calle Serrano",
+      "numero": "8",
+      "codigo_postal": "28001"
+    }
+  },
+  {
+    "nif": "56789012E",
+    "nombre": "Javier",
+    "apellidos": "López García",
+    "edad": 45,
+    "email": "javier.lopez@outlook.com",
+    "comision": 0.35,
+    "address": {
+      "pais": "España",
+      "ciudad": "Madrid",
+      "provincia": "Madrid",
+      "calle": "Calle Princesa",
+      "numero": "33",
+      "codigo_postal": "28008"
+    }
+  },
+  {
+    "nif": "67890123F",
+    "nombre": "Sofía",
+    "apellidos": "Torres Molina",
+    "edad": 29,
+    "email": "sofia.torres@gmail.com",
+    "comision": 0.32,
+    "address": {
+      "pais": "España",
+      "ciudad": "Almería",
+      "provincia": "Almería",
+      "calle": "Avenida del Mediterráneo",
+      "numero": "25",
+      "codigo_postal": "04006"
+    }
+  },
+  {
+    "nif": "78901234G",
+    "nombre": "Miguel",
+    "apellidos": "Navarro Fernández",
+    "edad": 37,
+    "email": "miguel.navarro@gmail.com",
+    "comision": 0.29,
+    "address": {
+      "pais": "España",
+      "ciudad": "Mojácar",
+      "provincia": "Almería",
+      "calle": "Calle Mayor",
+      "numero": "7",
+      "codigo_postal": "04638"
+    }
+  },
+  {
+    "nif": "89012345H",
+    "nombre": "Isabel",
+    "apellidos": "Ortega Pérez",
+    "edad": 33,
+    "email": "isabel.ortega@gmail.com",
+    "comision": 0.27,
+    "address": {
+      "pais": "España",
+      "ciudad": "Huércal-Overa",
+      "provincia": "Almería",
+      "calle": "Calle Real",
+      "numero": "14",
+      "codigo_postal": "04600"
+    }
+  },
+  {
+    "nif": "90123456I",
+    "nombre": "Antonio",
+    "apellidos": "Romero Gil",
+    "edad": 41,
+    "email": "antonio.romero@gmail.com",
+    "comision": 0.3,
+    "address": {
+      "pais": "España",
+      "ciudad": "Vera",
+      "provincia": "Almería",
+      "calle": "Calle Ancha",
+      "numero": "22",
+      "codigo_postal": "04620"
+    }
+  },
+  {
+    "nif": "01234567J",
+    "nombre": "Elena",
+    "apellidos": "Cano López",
+    "edad": 36,
+    "email": "elena.cano@hotmail.com",
+    "comision": 0.26,
+    "address": {
+      "pais": "España",
+      "ciudad": "Roquetas de Mar",
+      "provincia": "Almería",
+      "calle": "Calle del Mar",
+      "numero": "10",
+      "codigo_postal": "04740"
+    }
+  },
+  {
+    "nif": "11234568K",
+    "nombre": "Raúl",
+    "apellidos": "Martínez Ruiz",
+    "edad": 30,
+    "email": "raul.martinez@gmail.com",
+    "comision": 0.28,
+    "address": {
+      "pais": "España",
+      "ciudad": "Níjar",
+      "provincia": "Almería",
+      "calle": "Calle San José",
+      "numero": "4",
+      "codigo_postal": "04100"
+    }
+  },
+  {
+    "nif": "12234569L",
+    "nombre": "Laura",
+    "apellidos": "Gómez Serrano",
+    "edad": 38,
+    "email": "laura.gomez@gmail.com",
+    "comision": 0.31,
+    "address": {
+      "pais": "España",
+      "ciudad": "Adra",
+      "provincia": "Almería",
+      "calle": "Calle de las Flores",
+      "numero": "5",
+      "codigo_postal": "04770"
+    }
+  },
+  {
+    "nif": "13234570M",
+    "nombre": "Andrés",
+    "apellidos": "Jiménez Bravo",
+    "edad": 27,
+    "email": "andres.jimenez@gmail.com",
+    "comision": 0.24,
+    "address": {
+      "pais": "España",
+      "ciudad": "Cuevas del Almanzora",
+      "provincia": "Almería",
+      "calle": "Calle Castillo",
+      "numero": "18",
+      "codigo_postal": "04610"
+    }
+  },
+  {
+    "nif": "14234571N",
+    "nombre": "Beatriz",
+    "apellidos": "Hernández López",
+    "edad": 34,
+    "email": "beatriz.hernandez@gmail.com",
+    "comision": 0.3,
+    "address": {
+      "pais": "España",
+      "ciudad": "Murcia",
+      "provincia": "Murcia",
+      "calle": "Calle Trapería",
+      "numero": "16",
+      "codigo_postal": "30001"
+    }
+  },
+  {
+    "nif": "15234572O",
+    "nombre": "Sergio",
+    "apellidos": "Fernández Torres",
+    "edad": 32,
+    "email": "sergio.fernandez@hotmail.com",
+    "comision": 0.28,
+    "address": {
+      "pais": "España",
+      "ciudad": "Cartagena",
+      "provincia": "Murcia",
+      "calle": "Calle Mayor",
+      "numero": "20",
+      "codigo_postal": "30201"
+    }
+  },
+  {
+    "nif": "16234573P",
+    "nombre": "Nuria",
+    "apellidos": "Moreno Díaz",
+    "edad": 39,
+    "email": "nuria.moreno@gmail.com",
+    "comision": 0.27,
+    "address": {
+      "pais": "España",
+      "ciudad": "Lorca",
+      "provincia": "Murcia",
+      "calle": "Calle Corredera",
+      "numero": "8",
+      "codigo_postal": "30800"
+    }
+  },
+  {
+    "nif": "17234574Q",
+    "nombre": "José",
+    "apellidos": "Ramos Cano",
+    "edad": 43,
+    "email": "jose.ramos@gmail.com",
+    "comision": 0.33,
+    "address": {
+      "pais": "España",
+      "ciudad": "Totana",
+      "provincia": "Murcia",
+      "calle": "Calle Mayor",
+      "numero": "11",
+      "codigo_postal": "30850"
+    }
+  },
+  {
+    "nif": "18234575R",
+    "nombre": "Patricia",
+    "apellidos": "Aguilar Vera",
+    "edad": 26,
+    "email": "patricia.aguilar@gmail.com",
+    "comision": 0.22,
+    "address": {
+      "pais": "España",
+      "ciudad": "Águilas",
+      "provincia": "Murcia",
+      "calle": "Calle del Puerto",
+      "numero": "9",
+      "codigo_postal": "30880"
+    }
+  },
+  {
+    "nif": "19234576S",
+    "nombre": "Francisco",
+    "apellidos": "Delgado López",
+    "edad": 35,
+    "email": "francisco.delgado@gmail.com",
+    "comision": 0.3,
+    "address": {
+      "pais": "España",
+      "ciudad": "Granada",
+      "provincia": "Granada",
+      "calle": "Calle Reyes Católicos",
+      "numero": "17",
+      "codigo_postal": "18009"
+    }
+  },
+  {
+    "nif": "20234577T",
+    "nombre": "Marta",
+    "apellidos": "Castillo Ramos",
+    "edad": 29,
+    "email": "marta.castillo@gmail.com",
+    "comision": 0.25,
+    "address": {
+      "pais": "España",
+      "ciudad": "Motril",
+      "provincia": "Granada",
+      "calle": "Calle Nueva",
+      "numero": "6",
+      "codigo_postal": "18600"
+    }
+  }
+]

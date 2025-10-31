@@ -1,7 +1,7 @@
 
 //**** ORM --> Mapeo Objeto - Relacional ***** */
 
-import { Address } from "src/common/entitties/address";
+import { Address } from "src/common/modelo/entitties/address";
 import { BeforeInsert, Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 //create table usuario (id ....)
@@ -18,11 +18,11 @@ export class Usuario {
     id: string;
 
     @Column({ nullable:true,  length: 30})
-    name: string;
+    username: string;
 
-    @Column('int', {default: 18})
-    edad: number;
-    
+    @Column({ nullable:true,  length: 30})
+    password: string;
+
     @Column({nullable: false, unique: true})
     email: string;
     
@@ -54,15 +54,15 @@ export class Usuario {
         }
 
     }
-    @BeforeInsert()
-    checkName() {
-        console.log('Antes de insertar el usuario en la BD');
-        if (!this.name){
-            this.name = 'invitado';
-        }
+    // @BeforeInsert()
+    // checkName() {
+    //     console.log('Antes de insertar el usuario en la BD');
+    //     if (!this.name){
+    //         this.name = 'invitado';
+    //     }
 
-        this.name = this.name
-                    .replaceAll(' ', '_')
-                    .toUpperCase();  
-    }
+    //     this.name = this.name
+    //                 .replaceAll(' ', '_')
+    //                 .toUpperCase();  
+    // }
 }

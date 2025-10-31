@@ -1,6 +1,9 @@
 import { Type } from "class-transformer";
 import { IsEmail, IsInt, IsOptional, IsString, Matches, ValidateNested } from "class-validator";
-import { AddressDto } from "src/common/dto/address.dto";
+import { AddressDto } from "src/common/modelo/dto/address.dto";
+
+//interfaz ICliente (prop:valor) <--> Objeto CreateClienteDTO 
+//definir la validacion del objeto que viene desde Internet
 
 export class CreateClienteDto {
 

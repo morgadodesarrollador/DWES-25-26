@@ -33,19 +33,18 @@ export class UsuariosService {
     // return this.db.data.users;
   }
 
-  async new(usuariDTO: IUser):Promise<IRespUser>{
+  //async new(usuariDTO: IUser):Promise<IRespUser>{
     /* transformar el objeto usuario dto en una entidad usuario */
     //insertr el objeto usuario en la base de datos
-    const usuarioEntity = this.usuarioRepository.create(usuariDTO);
-    await this.usuarioRepository.save(usuarioEntity); 
-    // await this.db.read();// cargo la base de datos
+    // const usuarioEntity = this.usuarioRepository.create(usuariDTO);
+    // await this.usuarioRepository.save(usuarioEntity); 
+    // // await this.db.read();// cargo la base de datos
     // this.db.data.users.push(usuario); //inserta en el array users
     // await this.db.write(); //escribe en el fichero
-    return {
-      status: true,
-      code: 200,
-      msg: 'Usuario creado',
-      data: usuarioEntity
-    }
-  }
+    // return {
+    //   status: true,
+    //   code: 200,
+    //   msg: 'Usuario creado'
+    //   // data: usuarioEntity
+    // // }
 }

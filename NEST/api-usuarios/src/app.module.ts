@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ClientesModule } from './clientes/clientes.module';
-import { UsuariosModule } from './usuarios/usuarios.module';
+import { ClientesModule } from './modulos/clientes/clientes.module';
+import { UsuariosModule } from './modulos/usuarios/usuarios.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { Type } from 'class-transformer';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SeedModule } from './modulos/seed/seed.module';
 
 @Module({
   imports: [
@@ -20,7 +20,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: process.env.DB_NAME,
       autoLoadEntities: true,
       synchronize: true,
-    })
+    }),
+    SeedModule
   ],
   controllers: [AppController],
   providers: [AppService],

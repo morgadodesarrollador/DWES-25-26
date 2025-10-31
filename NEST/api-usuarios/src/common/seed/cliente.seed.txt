@@ -1,0 +1,38 @@
+import { DataSource } from 'typeorm';
+import { Cliente } from '../../modulos/clientes/entities/cliente.entity';
+// Usaremos faker para generar datos aleatorios
+import { faker } from '@faker-js/faker';
+
+export async function seedClientes(dataSource: DataSource) {
+  const repo = dataSource.getRepository(Cliente);
+  const existing = await repo.count();
+  if (existing >= 10) {
+    console.log('👤 Ya existen clientes en la base de datos. Seed cancelado.');
+    return;
+  }
+  console.log('🌱 Creando 10 clientes...');
+  const clientes: Cliente[] = [];
+
+  for (let i = 0; i < 10; i++) {
+    const cliente = repo.create({
+      nif: faker.string.numeric(8) + faker.string.alpha({ casing: 'upper' }),
+      name: faker.person.fullName(),
+      edad: faker.number.int({ min: 18, max: 70 }),
+      email: faker.internet.email(),
+      //categoria: //alguna categoria de la tabla categorias
+      comision: faker.number.float({ min: 0.1, max: 0.5}),
+      address: {
+        pais: 'España',
+        ciudad: faker.location.city(),
+        provincia: faker.location.state(),
+        calle: faker.location.street(),
+        numero: faker.string.numeric(2),
+        cpostal: faker.location.zipCode('#####'),
+      },
+    });
+
+    clientes.push(cliente);
+  }
+  await repo.save(clientes);
+  console.log('✅ 10 clientes insertados correctamente.');
+}

@@ -8,7 +8,7 @@ import { IsArray, IsNumber, IsInt, IsString, Min, Max, IsEmail, IsEmpty, IsNotEm
 
 
 import { Type } from "class-transformer";
-import { AddressDto } from "src/common/dto/address.dto";
+import { AddressDto } from "src/common/modelo/dto/address.dto";
 //peticion a los roles que hay en la tabla de roles de la api
 const roles: string[] = ['administrador', 'usuario', 'invitado'];
 

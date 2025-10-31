@@ -4,12 +4,9 @@
 //types -->. para definir estructuras de datos internas o esquemas de datos
 //dtos --> para validar estructuraas de datos que se reciben desde la red
 
-export interface IAdress {
-    calle: string;
-    numero: string;
-    ciudad: string;
-    pais: string;
-}
+import { IAdress } from "src/common/modelo/interfaces/IAddres";
+
+
 export interface IUser {
     
     name: string;

@@ -1,0 +1,15 @@
+import 'reflect-metadata';
+import dataSource from './data-source';
+import { seedClientes } from '../seed/cliente.seed';
+
+async function runSeed() {
+  const appDataSource = await dataSource.initialize();
+  console.log('🌱 Conectado a la base de datos.');
+
+  await seedClientes(appDataSource);
+
+  await appDataSource.destroy();
+  console.log('🔚 Seed finalizado.');
+}
+
+runSeed().catch((err) => console.error('❌ Error en el seed:', err));
