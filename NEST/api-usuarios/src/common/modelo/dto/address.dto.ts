@@ -4,30 +4,29 @@ export class AddressDto {
     @IsString()
     @IsOptional()
     @Length(2,50)
-    pais?: string;
+    pais: string;
 
     @IsString()
     @IsOptional()
     @Length(2,50)
-    ciudad?: string;
+    ciudad: string;
 
     @IsString()
     @IsOptional()
     @Length(2,50)
-    provincia?: string;
+    provincia: string;
 
     @IsString()
-    @IsOptional()
     @Length(2,50)
-    calle?: string;
+    calle: string;
 
     @IsString()
     @IsOptional()
     @Length(1,3)
-    numero?: string;
+    numero: string;
 
     @IsString()
     @IsOptional()
     @Length(4,6)
-    cpostal?: string;
+    cpostal: string;
 } 

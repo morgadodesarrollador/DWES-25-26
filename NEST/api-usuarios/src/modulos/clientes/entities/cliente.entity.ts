@@ -1,8 +1,9 @@
 
 //**** ORM --> Mapeo Objeto - Relacional ***** */
 
+import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
 import { Address } from "../../../common/modelo/entitties/address";
-import { BeforeInsert, Column, Entity, PrimaryColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, OneToOne, PrimaryColumn } from "typeorm";
 
 
 @Entity('cliente')
@@ -20,15 +21,22 @@ export class Cliente {
     @Column('int', {default: 18})
     edad: number;
     
-    @Column({nullable: false, unique: true})
-    email: string;
-    
     @Column('float', {default: 0.3})
     comision: number;
 
-    @Column(() => Address, { prefix: '' }) address: Address;
-    
-  
+    @Column(() => Address, { prefix: '' }) direccion: Address;
+    //1 cliente --> 1 usuario
+    //Relacion inversa (sin JoinColumn)
+    @OneToOne (
+        () => Usuario,
+        (usuario) => usuario.cliente
+    )
+    usuario: Usuario
+
+
+
+
+
     //**** MECENISMOS DE SEGURIDAD  *****/
     //monitorizar y auditarlos registros de usuarios y 
     //tabla de accesos --> login/logout/change Profile ...  
@@ -43,6 +51,7 @@ export class Cliente {
     //         this.nif = `${numeros}-${letra}`;   
     //     }
     // }
+    
     // @BeforeInsert()
     // checkName() {
     //     console.log('Antes de insertar el usuario en la BD');

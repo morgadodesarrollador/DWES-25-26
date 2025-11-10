@@ -1,31 +1,36 @@
 import { Type } from "class-transformer";
-import { IsEmail, IsInt, IsOptional, IsString, Matches, ValidateNested } from "class-validator";
+import { IsDecimal, IsEmail, IsInt, IsNumber, IsOptional, IsString, Matches, ValidateNested } from "class-validator";
 import { AddressDto } from "src/common/modelo/dto/address.dto";
+import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
+import { JoinColumn, OneToOne } from "typeorm";
+import { Cliente } from "../entities/cliente.entity";
 
 //interfaz ICliente (prop:valor) <--> Objeto CreateClienteDTO 
 //definir la validacion del objeto que viene desde Internet
 
 export class CreateClienteDto {
 
-    @IsOptional()
     @IsString()
     @Matches(/^\d{8}[A-Z]$/, {message: 'El nif no es correcto, 8 números y una letra mayúscula'})
     nif: string;
 
-    //Edad esta comprendidad entre 18 y 58
+    @IsString() /* funcion externa que valida que es un string */
+    nombre: string;
+
+    @IsString() /* funcion externa que valida que es un string */
+    apellidos: string; 
+
+      //Edad esta comprendidad entre 18 y 58
     @IsInt({message: 'La edad es un entero'}) /* funcion externa que valida que es un número */
-    @IsOptional()
     edad: number;
 
-    @IsOptional()
-    @IsString() /* funcion externa que valida que es un string */
-    name: string;
-
-    @IsEmail() /* funcion externa que valida que es un string */
-    email: string;
-
-    @IsOptional()
+    @IsNumber()
     comision: number;
+
+    @ValidateNested() //valida el objeto direccion: AdressDTO
+    @Type(() => AddressDto) //indica el tipo de los elementos del array
+    direccion: AddressDto
+
 
     // @IsOptional()
     // @IsArray() /* funcion externa que valida que es un array */
@@ -43,8 +48,6 @@ export class CreateClienteDto {
     // @Type(() => AdressDTO) //indica el tipo de los elementos del array
     // direcciones: AdressDTO[]; //array de direcciones
    
-    @ValidateNested() //valida cada uno de los elementos del array
-    @Type(() => AddressDto) //indica el tipo de los elementos del array
-    direccion: AddressDto
+    
 }
 

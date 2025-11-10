@@ -26,4 +26,14 @@ export class ClientesService {
             data: cliente
         }
     }
+
+    //obtener 1 objeto (detalle)
+    async findOne(nif: string) {
+        //select * from Cliente C where C.nif = ${nif}
+        const cliente = await this.clientesRepository.findOne({
+            where: { nif }
+        })
+        console.log(cliente)
+        return cliente;
+    }
 }

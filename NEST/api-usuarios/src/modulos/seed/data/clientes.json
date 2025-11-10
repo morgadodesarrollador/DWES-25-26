@@ -4,7 +4,6 @@
     "nombre": "Carlos",
     "apellidos": "Pérez Gómez",
     "edad": 34,
-    "email": "carlos.perez@gmail.com",
     "comision": 0.25,
     "address": {
       "pais": "España",
@@ -36,7 +35,6 @@
     "nombre": "David",
     "apellidos": "Sánchez Morales",
     "edad": 40,
-    "email": "david.sanchez@hotmail.com",
     "comision": 0.28,
     "address": {
       "pais": "España",
@@ -52,7 +50,6 @@
     "nombre": "María",
     "apellidos": "Rodríguez León",
     "edad": 31,
-    "email": "maria.rodriguez@gmail.com",
     "comision": 0.27,
     "address": {
       "pais": "España",
@@ -68,7 +65,6 @@
     "nombre": "Javier",
     "apellidos": "López García",
     "edad": 45,
-    "email": "javier.lopez@outlook.com",
     "comision": 0.35,
     "address": {
       "pais": "España",
@@ -84,7 +80,6 @@
     "nombre": "Sofía",
     "apellidos": "Torres Molina",
     "edad": 29,
-    "email": "sofia.torres@gmail.com",
     "comision": 0.32,
     "address": {
       "pais": "España",
@@ -100,7 +95,6 @@
     "nombre": "Miguel",
     "apellidos": "Navarro Fernández",
     "edad": 37,
-    "email": "miguel.navarro@gmail.com",
     "comision": 0.29,
     "address": {
       "pais": "España",
@@ -116,7 +110,6 @@
     "nombre": "Isabel",
     "apellidos": "Ortega Pérez",
     "edad": 33,
-    "email": "isabel.ortega@gmail.com",
     "comision": 0.27,
     "address": {
       "pais": "España",
@@ -132,7 +125,6 @@
     "nombre": "Antonio",
     "apellidos": "Romero Gil",
     "edad": 41,
-    "email": "antonio.romero@gmail.com",
     "comision": 0.3,
     "address": {
       "pais": "España",
@@ -148,7 +140,6 @@
     "nombre": "Elena",
     "apellidos": "Cano López",
     "edad": 36,
-    "email": "elena.cano@hotmail.com",
     "comision": 0.26,
     "address": {
       "pais": "España",
@@ -164,7 +155,6 @@
     "nombre": "Raúl",
     "apellidos": "Martínez Ruiz",
     "edad": 30,
-    "email": "raul.martinez@gmail.com",
     "comision": 0.28,
     "address": {
       "pais": "España",
@@ -180,7 +170,6 @@
     "nombre": "Laura",
     "apellidos": "Gómez Serrano",
     "edad": 38,
-    "email": "laura.gomez@gmail.com",
     "comision": 0.31,
     "address": {
       "pais": "España",
@@ -196,7 +185,6 @@
     "nombre": "Andrés",
     "apellidos": "Jiménez Bravo",
     "edad": 27,
-    "email": "andres.jimenez@gmail.com",
     "comision": 0.24,
     "address": {
       "pais": "España",
@@ -212,7 +200,6 @@
     "nombre": "Beatriz",
     "apellidos": "Hernández López",
     "edad": 34,
-    "email": "beatriz.hernandez@gmail.com",
     "comision": 0.3,
     "address": {
       "pais": "España",
@@ -228,7 +215,6 @@
     "nombre": "Sergio",
     "apellidos": "Fernández Torres",
     "edad": 32,
-    "email": "sergio.fernandez@hotmail.com",
     "comision": 0.28,
     "address": {
       "pais": "España",
@@ -244,7 +230,6 @@
     "nombre": "Nuria",
     "apellidos": "Moreno Díaz",
     "edad": 39,
-    "email": "nuria.moreno@gmail.com",
     "comision": 0.27,
     "address": {
       "pais": "España",
@@ -260,7 +245,6 @@
     "nombre": "José",
     "apellidos": "Ramos Cano",
     "edad": 43,
-    "email": "jose.ramos@gmail.com",
     "comision": 0.33,
     "address": {
       "pais": "España",
@@ -276,7 +260,6 @@
     "nombre": "Patricia",
     "apellidos": "Aguilar Vera",
     "edad": 26,
-    "email": "patricia.aguilar@gmail.com",
     "comision": 0.22,
     "address": {
       "pais": "España",
@@ -292,7 +275,6 @@
     "nombre": "Francisco",
     "apellidos": "Delgado López",
     "edad": 35,
-    "email": "francisco.delgado@gmail.com",
     "comision": 0.3,
     "address": {
       "pais": "España",
@@ -308,7 +290,6 @@
     "nombre": "Marta",
     "apellidos": "Castillo Ramos",
     "edad": 29,
-    "email": "marta.castillo@gmail.com",
     "comision": 0.25,
     "address": {
       "pais": "España",

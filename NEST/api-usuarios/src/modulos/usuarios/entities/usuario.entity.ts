@@ -1,8 +1,12 @@
 
 //**** ORM --> Mapeo Objeto - Relacional ***** */
 
+import { Type } from "class-transformer";
+import { ValidateNested } from "class-validator";
+import { AddressDto } from "src/common/modelo/dto/address.dto";
 import { Address } from "src/common/modelo/entitties/address";
-import { BeforeInsert, Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Cliente } from "src/modulos/clientes/entities/cliente.entity";
+import { BeforeInsert, Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 //create table usuario (id ....)
 //LOGICA DE NEGOCIO DE LA ENTIDAD USUARIO. Hola
@@ -11,10 +15,8 @@ import { BeforeInsert, Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryG
 @Entity('usuario')
 export class Usuario {
     
-    @PrimaryColumn()
-    nif: string;
 
-    @Column('uuid')
+    @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column({ nullable:true,  length: 30})
@@ -27,9 +29,28 @@ export class Usuario {
     email: string;
     
     @Column()
+    foto: string; 
+
+    @Column()
     rol: string;
 
-    @Column(() => Address, { prefix: 'direccion' }) direccion: Address;
+
+    //1 usuario --> 1 cliente
+    //Relación Directa (con JoinColumn)
+    @OneToOne (
+        () => Cliente, 
+        (cliente) => cliente.usuario, { cascade: true }
+    )
+    @JoinColumn({
+        name: 'cliente',
+        foreignKeyConstraintName: 'fk_cliente_en_usuario'
+    }) //genera la FKey
+    cliente: Cliente
+
+
+  
+    /* crear un objeto embebido con las redes sociales */
+
   
     //**** MECENISMOS DE SEGURIDAD  *****/
     //monitorizar y auditarlos registros de usuarios y 
@@ -40,29 +61,4 @@ export class Usuario {
     @UpdateDateColumn()
     updatedAt: Date;
     
-    //deletedAt: Date;
-    //@Before/After-Insert/Update/Remove 
-
-
-    @BeforeInsert() //evento disparador
-    CheckNif(){ // método manejador del evento
-        console.log('Antes nif de insertar el usuario en la BD');
-        if (!this.nif.includes('-')){
-            const letra = this.nif.slice(-1).toUpperCase();
-            const numeros = this.nif.slice(0, -1);
-            this.nif = `${numeros}-${letra}`;   
-        }
-
-    }
-    // @BeforeInsert()
-    // checkName() {
-    //     console.log('Antes de insertar el usuario en la BD');
-    //     if (!this.name){
-    //         this.name = 'invitado';
-    //     }
-
-    //     this.name = this.name
-    //                 .replaceAll(' ', '_')
-    //                 .toUpperCase();  
-    // }
 }

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000001",
+    "username": "carlos.perez",
+    "password": "1234abcd",
+    "email": "carlos.perez@gmail.com",
+    "foto": "https://randomuser.me/api/portraits/men/12.jpg",
+    "rol": "administrador",
+    "nif": "12345678A"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000002",
+    "username": "lucia.martin",
+    "password": "abcd1234",
+    "email": "lucia.martin@yahoo.es",
+    "foto": "https://randomuser.me/api/portraits/women/25.jpg",
+    "rol": "cliente",
+    "nif": "23456789B"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000003",
+    "username": "david.sanchez",
+    "password": "pass5678",
+    "email": "david.sanchez@hotmail.com",
+    "foto": "https://randomuser.me/api/portraits/men/45.jpg",
+    "rol": "invitado",
+    "nif": "34567890C"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000004",
+    "username": "maria.rodriguez",
+    "password": "maria2025",
+    "email": "maria.rodriguez@gmail.com",
+    "foto": "https://randomuser.me/api/portraits/women/18.jpg",
+    "rol": "cliente",
+    "nif": "45678901D"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000005",
+    "username": "javier.lopez",
+    "password": "javilopez",
+    "email": "javier.lopez@outlook.es",
+    "foto": "https://randomuser.me/api/portraits/men/27.jpg",
+    "rol": "administrador",
+    "nif": "56789012E"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000006",
+    "username": "sofia.torres",
+    "password": "sofiaPass",
+    "email": "sofia.torres@gmail.com",
+    "foto": "https://randomuser.me/api/portraits/women/10.jpg",
+    "rol": "cliente",
+    "nif": "67890123F"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000007",
+    "username": "miguel.navarro",
+    "password": "miguelo07",
+    "email": "miguel.navarro@hotmail.com",
+    "foto": "https://randomuser.me/api/portraits/men/4.jpg",
+    "rol": "invitado",
+    "nif": "78901234G"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000008",
+    "username": "isabel.ortega",
+    "password": "isa2025",
+    "email": "isabel.ortega@gmail.com",
+    "foto": "https://randomuser.me/api/portraits/women/15.jpg",
+    "rol": "cliente",
+    "nif": "89012345H"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000009",
+    "username": "antonio.romero",
+    "password": "antonioROM",
+    "email": "antonio.romero@gmail.com",
+    "foto": "https://randomuser.me/api/portraits/men/32.jpg",
+    "rol": "cliente",
+    "nif": "90123456I"
+  },
+  {
+    "id": "1a2b3c4d-0001-0000-0000-000000000010",
+    "username": "elena.cano",
+    "password": "elena2024",
+    "email": "elena.cano@hotmail.com",
+    "foto": "https://randomuser.me/api/portraits/women/31.jpg",
+    "rol": "administrador",
+    "nif": "01234567J"
+  }
+]

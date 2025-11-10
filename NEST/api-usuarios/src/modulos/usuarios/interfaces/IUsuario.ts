@@ -5,25 +5,25 @@
 //dtos --> para validar estructuraas de datos que se reciben desde la red
 
 import { IAdress } from "src/common/modelo/interfaces/IAddres";
+import { ICliente } from "src/modulos/clientes/interfaces/ICliente";
 
 
 export interface IUser {
     
-    name: string;
+    username: string;
     email: string;
-    edad: number;
+    password: string;
     rol: string;
-    telefonos?: string[];
+    foto?: string;
+    cliente?: ICliente;
     nif?: string;
-    esdelMadrid?: boolean;
-    direcciones?: IAdress[];
 } 
 
 export interface IRespUser {
     status: boolean;
     code: number;
     msg: string;
-    data: IUser;
+    // data: IUser;
 }
 
 

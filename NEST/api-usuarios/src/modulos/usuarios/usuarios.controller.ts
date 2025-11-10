@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Param, ParseUUIDPipe, Post } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service';
 import { CreateUserDto } from './dto/create-user.dto';
+import { ClientesService } from '../clientes/clientes.service';
 
 @Controller('usuarios') /* tabla de mapeo ruta y controlador */
 
@@ -8,7 +9,10 @@ export class UsuariosController {
   //inyectar el servicio UsuariosService en UsuariosController
   //solo se inyectan clases con el decorador @Injectable
   //inyectar SERVICIO en CONTROLADOR
-  constructor(private readonly usuariosService: UsuariosService) {}
+  constructor(
+    private readonly usuariosService: UsuariosService,
+    
+  ) {}
 
   @Get() /* endponit raiz -- home */
   getHome(){
@@ -34,7 +38,8 @@ export class UsuariosController {
   //Métodos ENDPOINT --> DECORADOR get, post, put, delete...
   @Post('new') /* endponit raiz */
   add(@Body() usuarioDTO: CreateUserDto){
-    // return this.usuariosService.new(usuarioDTO);
+    
+    return this.usuariosService.new(usuarioDTO);
   }
   //metodo interno para borrar usuarios., NO ES ENDPOINT
   delete(){

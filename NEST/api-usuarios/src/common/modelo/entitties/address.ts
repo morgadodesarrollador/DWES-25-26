@@ -1,4 +1,4 @@
-import { Column } from "typeorm";
+import { BeforeInsert, Column } from "typeorm";
 
 export class Address {
     @Column({nullable: true, length: 50}) 
@@ -19,4 +19,8 @@ export class Address {
     @Column({nullable: true, length:6, name: 'codigo_postal'}) 
     cpostal: string;
 
+    @BeforeInsert()
+    checkcpostal(){
+        //...
+    }
 }

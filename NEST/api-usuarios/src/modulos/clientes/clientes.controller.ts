@@ -9,6 +9,6 @@ export class ClientesController {
 
   @Post()
   add (@Body() clienteDTO: CreateClienteDto) {
-    
+    this.clientesService.new(clienteDTO)
   }
 }
