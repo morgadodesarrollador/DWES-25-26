@@ -39,7 +39,7 @@ export class Usuario {
     //Relación Directa (con JoinColumn)
     @OneToOne (
         () => Cliente, 
-        (cliente) => cliente.usuario, { cascade: true }
+        (cliente) => cliente.usuario, { cascade: false }
     )
     @JoinColumn({
         name: 'cliente',
@@ -61,4 +61,12 @@ export class Usuario {
     @UpdateDateColumn()
     updatedAt: Date;
     
+    @BeforeInsert()
+    checkusername(){
+        //jsanmar345
+        this.username = 
+            this.cliente.nombre + '.' + 
+            this.cliente.apellidos + '.' +
+            this.cliente.edad
+    }
 }

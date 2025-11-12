@@ -15,10 +15,14 @@ export class ClientesService {
         // codigo contructor servicio
     }
 
+    create (cliente: ICliente){
+       return this.clientesRepository.create(cliente);
+    }
+
     async new (cliente: ICliente){ //cliente: DTO/Ifaz
         // transformar el objeto cliente DTO/Ifaz en una entidad cliente (Entity<Cliente)
-        const cliente_data = this.clientesRepository.create(cliente);
-        await this.clientesRepository.save(cliente_data);
+        const clienteEntity = this.clientesRepository.create(cliente);
+        await this.clientesRepository.save(clienteEntity);
         return {
             status: true,
             code: 200,
@@ -35,5 +39,18 @@ export class ClientesService {
         })
         console.log(cliente)
         return cliente;
+    }
+
+    async deleteAllclientes(){
+        console.log('borrar clientes')
+        const query = this.clientesRepository.createQueryBuilder('cliente');
+        try {
+            return await query
+                .delete()
+                .where({})
+                .execute()
+        }catch(error){
+            
+        }
     }
 }

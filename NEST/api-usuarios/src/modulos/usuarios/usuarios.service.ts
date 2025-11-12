@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 import { IRespUser, IUser } from './interfaces/IUsuario';
-import { Repository } from 'typeorm';
+import { DataSource, Repository } from 'typeorm';
 import { Usuario } from './entities/usuario.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Cliente } from '../clientes/entities/cliente.entity';
@@ -12,14 +12,15 @@ type Data = { users: IUser[] }
 @Injectable()
 export class UsuariosService {
   //private db: Low<Data>;
-  
+
   //inyectar ORM en SERVICIO
   //inyectar el repositorio de usuarios en el servicio UsuarioService
-  
+
   constructor(
-    @InjectRepository(Usuario) 
+    @InjectRepository(Usuario)
     private readonly usuarioRepository: Repository<Usuario>,
-    private readonly clientesService: ClientesService
+    private readonly clientesService: ClientesService,
+    private dataSource: DataSource //obj q contiene todo el esquema de la BD
   ) {
     // const adaptador = new JSONFile<Data>('common/db/db.json');
     // this.db = new Low<Data>(adaptador, { users: [] } );
@@ -37,9 +38,9 @@ export class UsuariosService {
     // return this.db.data.users;
   }
 
-  async new(usuarioDTO: IUser):Promise<IRespUser>{
+  async new(usuarioDTO: IUser):Promise<IRespUser | any>{
 
-    if (usuarioDTO.nif){
+    if (usuarioDTO.nif){ //caso 2
       console.log("Buscar cliente existe");
       const cliente = await this.clientesService.findOne(usuarioDTO.nif)
       //transforma el objeto DTO/IFaz ---> obj Entity
@@ -49,18 +50,74 @@ export class UsuariosService {
       usuarioEntity.cliente = cliente; //direccion de memoria
       console.log(cliente, usuarioEntity)
       await this.usuarioRepository.save(usuarioEntity)
-    } else {
-      const usuarioEntity = this.usuarioRepository.create(usuarioDTO);
-      //insert into Uusario (nif, nombre)...
-      await this.usuarioRepository.save(usuarioEntity) //insert --> bd
-    
+    } else { // obj cliente embebido en usuario --> caso 1 || caso 3 (cascade: true/false)
+         const respuesta = await this.checkCascade();
+          if (respuesta.cascade == true){
+            console.log("ucliente en cascada")
+            const usuarioEntity = this.usuarioRepository.create(usuarioDTO);
+            //insert into Uusario (nif, nombre)...
+            await this.usuarioRepository.save(usuarioEntity) //insert --> bd
+          }else { //cascade == false. caso 3
+            console.log ('casade: ', respuesta.cascade)
+            //detructurar para extraer cliente y usuario
+            //...usuario --> operador spread (es6)
+            // Pas1 { ob1, ob2 } = objeto --> operador destructuracion del objeto
+            const { cliente, ...usuario } = usuarioDTO;
+
+           // console.log(cliente," - ", usuario);
+            //usuarioDTO --> usuarioEntity
+            
+            //Paso2 - Inserta cliente
+            this.clientesService.new(cliente);
+           // const clienteE = this.clieneteREPO (cliente);
+            //Paso3 - establecer la Fk en usuario con cliente
+            const usuarioEntity = this.usuarioRepository.create(usuario)
+            const clienteEntity = this.clientesService.create(cliente)
+            usuarioEntity.cliente = clienteEntity; //FK
+            //paso4-. Insertar el usuario
+            this.usuarioRepository.save(usuarioEntity)
+
+          // caca -->  this.clientesRepository.save(cliente);
+
+          }
     }
-     
     return {
-      status: true,
-      code: 200,
-      msg: 'Usuario creado'
-      // data: usuarioEntity
+        status: true,
+        code: 200,
+        msg: 'Usuario creado',
+        // data: usuarioEntity
     }
+    
   }
+
+  async deleteAllUsarios(){
+        console.log('borrar usuarios')
+        const query = this.usuarioRepository.createQueryBuilder('usuario');
+        try {
+            return await query
+                .delete()
+                .where({})
+                .execute()
+        }catch(error){
+
+        }
+    }
+  
+    async checkCascade(){ //Entidad - relacion - tipo (i/d/u)
+      //extrayendo en mtdata todo el esquema de la Entidad/Tabla Usuario
+      const metadata = this.dataSource.getMetadata(Usuario);
+      //console.log (metadata);
+      const relacion = metadata.relations.find(
+        (relacion) => relacion.propertyName == "cliente"
+      );
+      //console.log(relacion)
+      const chcascade = relacion.isCascadeInsert || relacion.isCascadeUpdate;
+      return {
+        entidad: metadata.name,
+        propiedad: relacion.propertyName,
+        tipoRelacion: relacion.relationType,
+        cascade: chcascade
+      }
+    }
+
 }

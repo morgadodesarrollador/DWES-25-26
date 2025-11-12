@@ -23,7 +23,7 @@ export interface IRespUser {
     status: boolean;
     code: number;
     msg: string;
-    // data: IUser;
+    data?: any;
 }
 
 

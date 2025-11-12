@@ -37,7 +37,7 @@ export class CreateUserDto {
     cliente: CreateClienteDto
 
     // caso2 --> el nif del cliente
- //   @IsOptional()
+    @IsOptional()
     @IsString()
     nif: string;
 }
