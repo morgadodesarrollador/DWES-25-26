@@ -29,8 +29,8 @@ export class UsuariosController {
   //se le pasa el $id por Get y se devuelve ese producto (objeto)
   // ---> select * from productos where $id = productos.id
   @Get(':id')
-  findOne(@Param ('id', new ParseUUIDPipe({version: '4'})) id: number){
-
+  findOne(@Param ('id', new ParseUUIDPipe({version: '4'})) id: string){
+    console.log(id)
     return this.usuariosService.findOne(id);
 
   }

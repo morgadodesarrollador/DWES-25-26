@@ -26,16 +26,21 @@ export class UsuariosService {
     // this.db = new Low<Data>(adaptador, { users: [] } );
   }
 
-  async findOne(id: number): Promise<IUser>{
+  async findOne(id: string): Promise<IUser>{
     console.log(id)
-    // const data = await this.db.read();//se bloquea
- //   const usuario = this.db.data.users.find(usuario => usuario.id === parseInt(id));
-   // console.log(usuario)
-    return null;
+    const usuario = await this.usuarioRepository.findOne({
+      where: { id },
+      relations: { cliente: true }
+    })
+    return usuario;
   }
   async findAll(){
-    // await this.db.read();//se bloquea
-    // return this.db.data.users;
+    const usuarios = await this.usuarioRepository.find({
+      relations: { 
+        cliente: true,
+      }
+    });
+    return usuarios
   }
 
   async new(usuarioDTO: IUser):Promise<IRespUser | any>{

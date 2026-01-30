@@ -31,15 +31,15 @@ export class Usuario {
     @Column()
     foto: string; 
 
-    @Column()
-    rol: string;
+    // @Column()
+    // rol: string;
 
 
     //1 usuario --> 1 cliente
     //Relación Directa (con JoinColumn)
     @OneToOne (
         () => Cliente, 
-        (cliente) => cliente.usuario, { cascade: false }
+        (cliente) => cliente.usuario, { cascade: false, eager: false }
     )
     @JoinColumn({
         name: 'cliente',

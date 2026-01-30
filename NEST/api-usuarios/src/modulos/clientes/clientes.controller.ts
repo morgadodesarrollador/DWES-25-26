@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ClientesService } from './clientes.service';
 import { CreateClienteDto } from './dto/cliente.dto';
 
@@ -11,4 +11,10 @@ export class ClientesController {
   add (@Body() clienteDTO: CreateClienteDto) {
     this.clientesService.new(clienteDTO)
   }
+
+  @Get(':nif')
+    findOne(nif: string){
+      return this.clientesService.findOne(nif);
+  
+    }
 }

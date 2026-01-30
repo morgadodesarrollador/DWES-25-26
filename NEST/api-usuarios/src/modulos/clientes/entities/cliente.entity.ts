@@ -25,16 +25,18 @@ export class Cliente {
     comision: number;
 
     @Column(() => Address, { prefix: '' }) direccion: Address;
+   
     //1 cliente --> 1 usuario
     //Relacion inversa (sin JoinColumn)
     @OneToOne (
         () => Usuario,
-        (usuario) => usuario.cliente
+        (usuario) => usuario.cliente, { eager: false }
     )
     usuario: Usuario
 
 
 
+    
 
 
     //**** MECENISMOS DE SEGURIDAD  *****/

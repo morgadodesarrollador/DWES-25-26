@@ -35,7 +35,8 @@ export class ClientesService {
     async findOne(nif: string) {
         //select * from Cliente C where C.nif = ${nif}
         const cliente = await this.clientesRepository.findOne({
-            where: { nif }
+            where: { nif },
+            relations: { usuario: true  }
         })
         console.log(cliente)
         return cliente;
